@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Microscope Observation | Fish Hematology Research</title>
+  <meta name="description" content="Microscopic observation of fish blood smear under 10x and 40x magnification, showing erythrocytes, leukocytes, and monocytes." />
+  <style>
+    :root{
+      --teal:#00c2c7;
+      --muted:#6b7280;
+      --nav-h:72px;
+      --maxw:1000px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,Arial,sans-serif;color:#042029;background:#f6fbfb;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+
+    /* Navbar */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      height:var(--nav-h);
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 3.5%; /* tighter left padding */
+      border-bottom:1px solid rgba(0,0,0,0.1);
+      z-index:50;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+    .brand img{
+      height:44px;
+      width:44px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+    .brand span{
+      font-weight:700;
+      font-size:18px;
+      color:#042029;
+      white-space:nowrap;
+    }
+
+    /* nav links */
+    nav{
+      display:flex;
+      gap:14px;
+      margin-left:auto;
+      align-items:center;
+      white-space:nowrap;
+    }
+    nav a{
+      font-weight:600;
+      color:#042029;
+      padding:8px 10px;
+      border-radius:6px;
+      transition:background .2s;
+      white-space:nowrap;
+    }
+    nav a:hover{background:rgba(0,0,0,0.08)}
+
+    main{
+      padding-top:calc(var(--nav-h) + 10px);
+      max-width:var(--maxw);
+      margin:auto;
+      padding-bottom:40px;
+      padding-left:5%;
+      padding-right:5%;
+    }
+    h1{color:var(--teal);font-size:36px;margin-bottom:20px;text-align:center;}
+    p{color:#1f2937;font-size:16px;margin-bottom:10px}
+
+    .breadcrumb{font-size:14px;color:var(--muted);margin-bottom:20px}
+    .breadcrumb a{color:var(--teal)}
+
+    .section{
+      background:white;
+      border-radius:12px;
+      padding:20px;
+      margin-top:25px;
+      box-shadow:0 8px 20px rgba(2,12,12,0.05);
+    }
+    .section h3{color:var(--teal);margin-bottom:10px}
+    .section img{
+      width:100%;
+      border-radius:10px;
+      margin-top:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    }
+    .caption{text-align:center;font-size:14px;color:var(--muted);margin-top:6px}
+
+    footer{text-align:center;padding:18px;color:var(--muted);margin-top:40px}
+
+    @media(max-width:700px){
+      h1{font-size:28px}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="brand">
+      <img src="https://iili.io/KQm6xje.png" alt="Fish Hematology Logo" />
+      <span>Fish Hematology Research</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="observation.html">Microscope Observation</a>
+      <a href="result.html">Result</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="breadcrumb">🏠 <a href="index.html">Home</a> › Microscope Observation</div>
+    <h1>Microscope Observation</h1>
+
+    <div class="section">
+      <h3>10× Microscopic View</h3>
+      <p>Under 10× magnification (field of view ≈ 0.45 mm; area ≈ 0.16 mm²), the peripheral blood smear of <em>Labeo rohita</em> revealed numerous oval, nucleated erythrocytes distributed uniformly across the field. The cells appeared well stained with distinct nuclei, allowing preliminary assessment of cell morphology and density.</p>
+      <img src="https://iili.io/Kp3PqLG.png" alt="Microscopic Observation 10x" />
+      <div class="caption">Fig 1. Blood smear observed under 10× objective lens</div>
+    </div>
+
+    <div class="section">
+      <h3>40× Microscopic View</h3>
+      <p>At 40× magnification with immersion oil, the cellular details were more clearly visible. The erythrocytes exhibited centrally placed nuclei, while various types of nucleated leukocytes — including lymphocytes, monocytes, and granulocytes — could be differentiated based on their size and granulation patterns.</p>
+      <img src="https://iili.io/Kp3P2et.png" alt="Microscopic Observation 40x" />
+      <div class="caption">Fig 2. High-power microscopic observation at 40× objective</div>
+    </div>
+
+    <div class="section">
+      <h3>Erythrocytes (RBC)</h3>
+      <p>The erythrocytes of <em>Labeo rohita</em> were oval, nucleated red blood cells with centrally located nuclei and haemoglobin-rich cytoplasm. The uniform size and shape of these erythrocytes indicate healthy oxygen-carrying efficiency and good blood quality. Reduced counts (30–35 cells per field) generally indicate infection or stress-related conditions.</p>
+      <img src="https://iili.io/Kp3P9gp.png" alt="Erythrocytes" />
+      <div class="caption">Fig 3. Nucleated oval erythrocytes observed in fish blood</div>
+    </div>
+
+    <div class="section">
+      <h3>Monocyte (WBC)</h3>
+      <p>Monocytes were identified as large, round to oval leukocytes with kidney-shaped nuclei and gray-blue cytoplasm. Their presence in elevated numbers suggests an active immune response, often due to infection or inflammation. In this study, the average monocyte count per field was about 2 cells.</p>
+      <img src="https://iili.io/Kp34yH7.png" alt="Monocyte" />
+      <div class="caption">Fig 4. Monocyte observed under microscope</div>
+    </div>
+
+    <footer>© 2025 Fish Hematology Research | Designed by Shrey Haldkar</footer>
+  </main>
+</body>
+</html>

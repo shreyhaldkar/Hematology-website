@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Material & Method | Fish Hematology Research</title>
+  <meta name="description" content="Detailed material and method used in fish hematology study by blood smear preparation." />
+  <style>
+    :root{
+      --teal:#00c2c7;
+      --muted:#6b7280;
+      --nav-h:72px;
+      --maxw:1000px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,Arial,sans-serif;color:#042029;background:#f6fbfb;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+
+    /* Navbar */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      height:var(--nav-h);
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 3.5%;
+      border-bottom:1px solid rgba(0,0,0,0.1);
+      z-index:50;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+    .brand img{
+      height:44px;
+      width:44px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+    .brand span{
+      font-weight:700;
+      font-size:18px;
+      color:#042029;
+      white-space:nowrap;
+    }
+
+    /* nav links */
+    nav{
+      display:flex;
+      gap:14px;
+      margin-left:auto;
+      align-items:center;
+      white-space:nowrap;
+    }
+    nav a{
+      font-weight:600;
+      color:#042029;
+      padding:8px 10px;
+      border-radius:6px;
+      transition:background .2s;
+      white-space:nowrap;
+    }
+    nav a:hover{background:rgba(0,0,0,0.08)}
+
+    main{
+      padding-top:calc(var(--nav-h) + 10px);
+      max-width:var(--maxw);
+      margin:auto;
+      padding-bottom:40px;
+      padding-left:5%;
+      padding-right:5%;
+    }
+    h1{color:var(--teal);font-size:36px;margin-bottom:20px;text-align:center;}
+    p,li{color:#1f2937;font-size:16px;margin-bottom:10px}
+    ul{padding-left:20px;margin-bottom:10px}
+    .breadcrumb{font-size:14px;color:var(--muted);margin-bottom:20px}
+    .breadcrumb a{color:var(--teal)}
+
+    .step{
+      background:white;
+      border-radius:12px;
+      padding:20px;
+      margin-top:25px;
+      box-shadow:0 8px 20px rgba(2,12,12,0.05);
+    }
+    .step h3{color:var(--teal);margin-bottom:10px}
+    .step img{
+      width:100%;
+      border-radius:10px;
+      margin-top:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    }
+    .caption{text-align:center;font-size:14px;color:var(--muted);margin-top:6px}
+
+    footer{text-align:center;padding:18px;color:var(--muted);margin-top:40px}
+
+    @media(max-width:700px){
+      h1{font-size:28px}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="brand">
+      <img src="https://iili.io/KQm6xje.png" alt="Fish Hematology Logo" />
+      <span>Fish Hematology Research</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="observation.html">Microscope Observation</a>
+      <a href="result.html">Result</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="breadcrumb">🏠 <a href="index.html">Home</a> › Methodology</div>
+    <h1>Material & Method</h1>
+
+    <div class="step">
+      <h3>Step 1: Blood Collection</h3>
+      <p>Blood was collected from <em>Labeo rohita</em> using the caudal vessel and cardiac puncture methods. Fish were first anesthetized before collection to minimize stress.</p>
+      <ul>
+        <li><strong>Caudal Vessel Puncture:</strong> The fish was placed ventral side up, and a fine needle (22–26 G) attached to a 5 mL syringe was inserted along the mid-ventral line just posterior to the anal fin until it contacted the spinal column. Gentle suction was applied until blood entered the syringe.</li>
+        <li><strong>Cardiac Puncture:</strong> The fish was anesthetized and held ventral side up. The syringe, pre-flushed with heparin solution, was inserted vertically between the anterior bases of the pectoral fins to access the heart. Gentle suction was applied until blood filled the syringe.</li>
+      </ul>
+      <p>The collected blood was transferred to chilled, labelled EDTA tubes (1.5–2 mL) and gently mixed by inversion to prevent clotting.</p>
+      <img src="https://iili.io/KpH7laf.jpg" alt="Blood Collection Process" />
+      <div class="caption">Fig 1. Blood collection from caudal vessel and cardiac puncture</div>
+    </div>
+
+    <div class="step">
+      <h3>Step 2: Blood Smear Preparation</h3>
+      <p>A clean, grease-free glass slide was used for preparing the blood smear.</p>
+      <ul>
+        <li>A drop of blood was placed about 2 cm from one end of the slide.</li>
+        <li>Another slide was held at a 45° angle and its edge touched to the drop. The spreader slide was swiftly pushed forward to spread the blood into a thin, feathered film.</li>
+        <li>The smear was air-dried naturally at room temperature without blowing or heating.</li>
+      </ul>
+      <img src="https://iili.io/KpHYm5x.jpg" alt="Blood Smear Process" />
+      <div class="caption">Fig 2. Blood smear preparation process</div>
+      <img src="https://iili.io/KpHY4b2.jpg" alt="Blood Smear Preparation" />
+      <div class="caption">Fig 3. Thin and even blood smear prepared on slide</div>
+    </div>
+
+    <div class="step">
+      <h3>Step 3: Fixation</h3>
+      <p>The prepared smears were fixed using absolute methanol to preserve cellular morphology.</p>
+      <ul>
+        <li>The slides were placed vertically in a coupling jar filled with absolute methanol until the smear area was covered.</li>
+        <li>The slides were left for 2–5 minutes and then air-dried upright on absorbent paper.</li>
+      </ul>
+      <img src="https://iili.io/KpHlssI.jpg" alt="Fixation process" />
+      <div class="caption">Fig 4. Fixation of blood smear slides using methanol</div>
+    </div>
+
+    <div class="step">
+      <h3>Step 4: Staining Techniques</h3>
+      <p>Leishman and Giemsa stains were used for differential staining of the blood cells.</p>
+      <ul>
+        <li>Each slide was covered with 1 mL of Leishman stain for 1–2 minutes.</li>
+        <li>Without removing the Leishman stain, an equal volume of Giemsa working solution was added and mixed gently.</li>
+        <li>A metallic sheen appearing on the surface indicated proper stain interaction.</li>
+        <li>After 14–20 minutes, slides were rinsed with distilled water and air-dried vertically.</li>
+      </ul>
+      <img src="https://iili.io/KpHlbJs.jpg" alt="Staining with Leishman and Giemsa" />
+      <div class="caption">Fig 5. Staining the fixed slides using Leishman and Giemsa stains</div>
+      <img src="https://iili.io/KpH0dsS.jpg" alt="Metallic sheen observed" />
+      <div class="caption">Fig 6. Metallic sheen observed during staining indicates proper mixture</div>
+    </div>
+
+    <footer>© 2025 Fish Hematology Research | Designed by Shrey Haldkar</footer>
+  </main>
+</body>
+</html>

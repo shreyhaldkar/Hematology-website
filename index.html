@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fish Hematology Research</title>
+  <meta name="description" content="Fish hematology study — blood smear preparation, methodology, microscope observation, and results." />
+  <style>
+    :root{
+      --teal:#00c2c7;
+      --muted:#6b7280;
+      --nav-h:72px;
+      --radius:12px;
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,Arial,sans-serif;color:#042029;background:#f6fbfb;line-height:1.45}
+    a{color:inherit;text-decoration:none}
+
+    /* ---------- NAVBAR ---------- */
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      height:var(--nav-h);
+      background:white;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 4%;
+      border-bottom:1px solid rgba(0,0,0,0.1);
+      z-index:1000;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .brand img{
+      height:42px;width:42px;border-radius:50%;object-fit:cover;
+    }
+    .brand span{
+      font-weight:700;
+      font-size:18px;
+      color:#042029;
+      white-space:nowrap;
+    }
+    nav{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    nav a{
+      font-weight:600;
+      color:#042029;
+      padding:6px 10px;
+      border-radius:6px;
+      transition:background .2s;
+    }
+    nav a:hover{background:rgba(0,0,0,0.1);}
+
+    /* ---------- HERO ---------- */
+    .hero-wrap{padding-top:var(--nav-h);}
+    .hero{
+      width:100%;
+      aspect-ratio:16/9;
+      position:relative;
+      overflow:hidden;
+      background:#000;
+    }
+    .slides{position:absolute;inset:0;}
+    .slides img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0;
+      transition:opacity 1s ease-in-out;
+    }
+    .slides img.active{opacity:1;}
+    .overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 70%);
+      display:flex;
+      align-items:flex-end;
+      padding:0 6% 50px;
+    }
+    .hero-content{
+      max-width:520px;
+      color:white;
+      animation:fadeUp 900ms ease both;
+    }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .hero-content .eyebrow{font-size:13px;color:rgba(255,255,255,0.85);letter-spacing:1px;margin-bottom:10px;}
+    .hero-content h1{font-size:40px;line-height:1.1;color:var(--teal);margin-bottom:10px;}
+    .hero-content p{color:rgba(255,255,255,0.9);margin-bottom:18px;font-size:16px;}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
+    .btn{
+      background:var(--teal);color:white;padding:10px 16px;border-radius:28px;border:0;font-weight:700;cursor:pointer;
+      box-shadow:0 8px 24px rgba(2,12,12,0.08);
+    }
+    .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,0.3);}
+    .btn:active{transform:translateY(1px);}
+
+    /* ---------- FEATURES ---------- */
+    .features{
+      max-width:var(--maxw);
+      margin:40px auto;
+      display:grid;
+      grid-template-columns:1fr 1fr; /* 2-column grid */
+      gap:24px;
+      padding:20px 4%;
+    }
+    .feature{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      background:white;
+      border-radius:12px;
+      padding:24px 20px;
+      box-shadow:0 6px 16px rgba(2,12,12,0.06);
+      transition:transform .2s,box-shadow .2s;
+      cursor:pointer;
+      text-align:left;
+    }
+    .feature:hover{
+      transform:translateY(-4px);
+      box-shadow:0 14px 28px rgba(2,12,12,0.1);
+    }
+    .feature .icon{
+      font-size:48px; /* bigger icon/logo */
+      flex-shrink:0;
+    }
+    .feature h3{
+      color:var(--teal);
+      margin-bottom:6px;
+      font-size:22px; /* bigger font */
+    }
+    .feature p{
+      color:var(--muted);
+      font-size:16px; /* bigger font */
+    }
+
+    /* ---------- REVIEWS ---------- */
+    .reviews{background:#f3fbfb;padding:35px 4%;margin-top:0;}
+    .reviews .inner{max-width:900px;margin:0 auto;display:grid;gap:16px;}
+    .review-card{background:white;padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(2,12,12,0.03);}
+    .review-form{display:grid;gap:8px;grid-template-columns:1fr 120px;align-items:start;}
+    .review-form input,.review-form textarea,.review-form select{
+      width:100%;padding:8px;border-radius:8px;border:1px solid #e6eef2;font-size:14px;
+    }
+    .review-form textarea{grid-column:1/-1;min-height:90px;}
+    .form-actions{display:flex;gap:8px;}
+    .rev-list{display:grid;gap:10px;}
+    .rev-item{background:white;padding:10px;border-radius:8px;}
+    .rev-left strong{color:var(--teal);}
+    .rev-left small{display:block;color:var(--muted);font-size:13px;margin-top:4px;}
+    .rev-right{font-size:15px;color:#f59e0b;}
+
+    footer{padding:16px;text-align:center;color:var(--muted);margin-top:16px;}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:1000px){
+      .hero-content h1{font-size:32px;}
+      .features{grid-template-columns:1fr;gap:16px;padding:16px 6%;}
+      .review-form{grid-template-columns:1fr;}
+      header{padding:0 4%;}
+    }
+    @media (max-width:600px){
+      .hero-content h1{font-size:26px;}
+      nav{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="brand">
+      <img src="https://iili.io/KQm6xje.png" alt="Fish Hematology Logo" />
+      <span>Fish Hematology Research</span>
+    </div>
+    <nav>
+      <a href="methodology.html">Methodology</a>
+      <a href="observation.html">Microscope Observation</a>
+      <a href="result.html">Results</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero-wrap">
+    <section class="hero">
+      <div class="slides">
+        <img src="https://iili.io/KQtlhWQ.jpg" alt="Slide 1" class="active" />
+        <img src="https://iili.io/KQtcAMB.jpg" alt="Slide 2" />
+        <img src="https://iili.io/KQtlXzx.jpg" alt="Slide 3" />
+      </div>
+      <div class="overlay">
+        <div class="hero-content">
+          <div class="eyebrow">WELCOME TO THE LAB</div>
+          <h1>Fish Hematology Study by Blood Smear Preparation</h1>
+          <p>Analyzing fish blood smear morphology to assess health, stress, and disease under varying environmental conditions.</p>
+          <div class="hero-actions">
+            <a class="btn" href="research.pdf" download>Download PDF</a>
+            <button class="btn ghost" onclick="document.location='#contact'">Contact Me</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="feature" onclick="location.href='methodology.html'">
+        <div class="icon">🧪</div>
+        <div class="feature-text">
+          <h3>Methodology</h3>
+          <p>Detailed procedures for blood collection, smear preparation, fixation, and staining using Leishman and Giemsa stains.</p>
+        </div>
+      </div>
+
+      <div class="feature" onclick="location.href='observation.html'">
+        <div class="icon">🔬</div>
+        <div class="feature-text">
+          <h3>Microscope Observation</h3>
+          <p>Examination of erythrocytes and leukocytes at different magnifications to identify cell structure and anomalies.</p>
+        </div>
+      </div>
+
+      <div class="feature" onclick="location.href='result.html'">
+        <div class="icon">📊</div>
+        <div class="feature-text">
+          <h3>Results</h3>
+          <p>Data interpretation on RBC and WBC count variations indicating fish health status and possible stress factors.</p>
+        </div>
+      </div>
+
+      <div class="feature" onclick="location.href='about.html'">
+        <div class="icon">👨‍🔬</div>
+        <div class="feature-text">
+          <h3>About Us</h3>
+          <p>Shrey Haldkar, B.F.Sc. undergraduate, passionate about aquatic biology, laboratory research, and innovation in fishery science.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="contact" class="reviews">
+      <div class="inner">
+        <div style="text-align:center">
+          <h2 style="color:var(--teal)">Leave a Review</h2>
+          <p style="color:var(--muted)">Share your feedback or questions about the research. Reviews are stored locally in your browser.</p>
+        </div>
+
+        <div class="review-card">
+          <form id="reviewForm" class="review-form">
+            <input type="email" id="rEmail" placeholder="Your email (visible)" required />
+            <select id="rRating" required>
+              <option value="">Rating</option>
+              <option value="5">★★★★★ (5)</option>
+              <option value="4">★★★★ (4)</option>
+              <option value="3">★★★ (3)</option>
+              <option value="2">★★ (2)</option>
+              <option value="1">★ (1)</option>
+            </select>
+            <textarea id="rComment" placeholder="Your comment..." required></textarea>
+            <div class="form-actions" style="grid-column:1/-1">
+              <button class="btn" type="submit">Submit Review</button>
+              <button type="button" id="clearReviews" class="btn ghost">Clear All</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="rev-list" id="revList"></div>
+      </div>
+    </section>
+
+    <footer>© 2025 Fish Hematology Research | Designed by Shrey Haldkar</footer>
+  </main>
+
+  <script>
+    /* ---------- Slideshow ---------- */
+    (function(){
+      const imgs=document.querySelectorAll('.slides img');
+      let i=0;
+      setInterval(()=>{
+        imgs[i].classList.remove('active');
+        i=(i+1)%imgs.length;
+        imgs[i].classList.add('active');
+      },4000);
+    })();
+
+    /* ---------- Reviews ---------- */
+    (function(){
+      const form=document.getElementById('reviewForm');
+      const revList=document.getElementById('revList');
+      const clearBtn=document.getElementById('clearReviews');
+      const STORAGE_KEY='fh_reviews_v1';
+
+      // Start with empty reviews
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+
+      function load(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')}catch(e){return[]}}
+      function save(a){localStorage.setItem(STORAGE_KEY,JSON.stringify(a))}
+      function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+      function render(){
+        const arr=load();
+        if(arr.length===0){
+          revList.innerHTML=''; // empty initially
+          return;
+        }
+        revList.innerHTML=arr.slice().reverse().map(r=>{
+          const stars='★'.repeat(r.rating)+'☆'.repeat(5-r.rating);
+          return `<div class='rev-item'><div class='rev-left'><strong>${escapeHtml(r.email)}</strong><small>${new Date(r.date).toLocaleString()}</small></div><div class='rev-right'>${stars}</div><div style='width:100%;margin-top:8px;color:#0b1720'>${escapeHtml(r.comment)}</div></div>`;
+        }).join('');
+      }
+      form.addEventListener('submit',e=>{
+        e.preventDefault();
+        const email=document.getElementById('rEmail').value.trim();
+        const rating=parseInt(document.getElementById('rRating').value)||0;
+        const comment=document.getElementById('rComment').value.trim();
+        if(!email||!comment||!rating)return alert('Please provide email, rating and comment.');
+        const arr=load();arr.push({email,rating,comment,date:new Date().toISOString()});
+        save(arr);form.reset();render();
+      });
+      clearBtn.addEventListener('click',()=>{
+        if(!confirm('Clear all reviews stored in this browser?'))return;
+        save([]);render();
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>

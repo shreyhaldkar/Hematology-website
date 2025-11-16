@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Shrey Haldkar — Portfolio</title>
+<meta name="description" content="Portfolio of Shrey Haldkar — Fishery Biologist, B.F.Sc, aquatic biology, certificates, skills, projects." />
+<style>
+  :root{
+    --teal:#00c2c7;
+    --muted:#6b7280;
+    --bg:#f6fbfb;
+    --card:#ffffff;
+    --radius:12px;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#042029;line-height:1.45}
+  a{color:inherit;text-decoration:none;font-weight:600}
+
+  header{background:var(--card);box-shadow:0 6px 24px rgba(2,12,12,0.06);padding:28px 5%;text-align:center}
+  header h1{margin:0;color:var(--teal);font-size:28px}
+  header p{margin:6px 0 0;color:var(--muted)}
+  header .home-link{font-size:14px;color:var(--teal);display:block;margin-top:6px}
+
+  .wrap{max-width:var(--maxw);margin:36px auto;padding:0 4%}
+
+  .hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+  .avatar{flex:0 0 180px}
+  .avatar img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid var(--teal);display:block}
+  .intro{flex:1;min-width:260px}
+  .intro h2{color:var(--teal);margin:0 0 4px;font-size:24px}
+  .subtitle{color:#0b5c5e;margin:0 0 12px;font-weight:600}
+  .intro p{color:var(--muted);margin:0 0 12px}
+  .meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-weight:600}
+  .chip{background:#f0f9f9;border-radius:999px;padding:8px 12px;border:1px solid rgba(0,194,199,0.08)}
+
+  section{margin-top:34px}
+  section h3{color:var(--teal);margin:0 0 18px;text-align:center;font-size:20px}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .skill{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 20px rgba(2,12,12,0.04)}
+  .skill h4{margin:0 0 8px;font-size:15px;color:#08383a}
+  .bar{height:12px;background:#e9f6f6;border-radius:999px;overflow:hidden}
+  .bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),#00f0e6);width:0;border-radius:999px;transition:width 900ms ease}
+
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+  .cert-grid .cert{background:var(--card);padding:6px;border-radius:10px;box-shadow:0 8px 30px rgba(2,12,12,0.04);cursor:pointer;overflow:hidden}
+  .cert img{width:100%;height:160px;object-fit:cover;border-radius:8px;display:block;transition:transform .18s}
+  .cert:hover img{transform:scale(1.03)}
+
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .project{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 8px 24px rgba(2,12,12,0.035)}
+  .project h4{margin:0 0 8px;color:#08383a;font-size:17px}
+  .project p{margin:0 0 10px;color:var(--muted);font-size:14px}
+  .project a{color:var(--teal);font-size:14px}
+
+  .contact{max-width:720px;margin:0 auto}
+  .contact form{display:grid;gap:10px}
+  .contact input,.contact textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef2;font-size:14px}
+  .btn{background:var(--teal);color:white;padding:10px 14px;border-radius:999px;border:0;font-weight:700;cursor:pointer}
+
+  footer{padding:18px;text-align:center;color:var(--muted);margin-top:36px}
+
+  .lb-back{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+  .lb{position:relative;max-width:1100px;width:100%;max-height:90vh;display:flex;justify-content:center;align-items:center}
+  .lb img{max-width:100%;max-height:90vh;border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+  .lb-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:white;border:none;font-size:28px;padding:12px;cursor:pointer;border-radius:50%;z-index:2}
+  .lb-arrow:hover{background:rgba(0,0,0,0.6)}
+  .lb-arrow.left{left:12px;}
+  .lb-arrow.right{right:12px;}
+  .lb-close{position:fixed;right:18px;top:18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:white;padding:8px;border-radius:10px;cursor:pointer}
+
+  @media(max-width:720px){
+    .hero{padding:20px 0}
+    .avatar img{width:140px;height:140px}
+    .cert img{height:120px}
+    .lb{flex-direction:column}
+    .lb-arrow{font-size:22px;padding:10px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Shrey Haldkar</h1>
+  <p>Fishery Biologist • B.F.Sc</p>
+  <a href="index.html" class="home-link">⬅ Back to Home</a>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Intro">
+    <div class="avatar">
+      <img src="https://iili.io/KQZc5q7.jpg" alt="Shrey Haldkar photo">
+    </div>
+    <div class="intro">
+      <h2>Hi, I'm Shrey Haldkar</h2>
+      <p class="subtitle">Fishery Biologist</p>
+      <p>Aquatic biology and fisheries graduate skilled in aquaculture, hatchery operations, fish health, water quality analysis, and research-based fieldwork.</p>
+      <div class="meta" style="margin-top:10px">
+        <div class="chip">B.F.Sc</div>
+        <div class="chip">Location: India</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section aria-label="Education">
+    <h3>Education</h3>
+    <div class="projects-grid">
+      <div class="project"><h4>10th</h4><p>St. Joseph's Convent Hr. Sec. School, Ranjhi, Jabalpur (M.P)</p></div>
+      <div class="project"><h4>12th</h4><p>St. Joseph's Convent Hr. Sec. School, Ranjhi, Jabalpur (M.P)</p></div>
+      <div class="project"><h4>B.F.Sc</h4><p>College of Fishery Science, NDVSU, Jabalpur</p></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section aria-label="Skills">
+    <h3>Skills</h3>
+    <div class="skills" id="skills">
+      <div class="skill"><h4>Hatchery Management</h4><div class="bar"><span style="width:85%"></span></div></div>
+      <div class="skill"><h4>Farm Management</h4><div class="bar"><span style="width:88%"></span></div></div>
+      <div class="skill"><h4>Gear Construction</h4><div class="bar"><span style="width:80%"></span></div></div>
+      <div class="skill"><h4>Aquarium Fabrication</h4><div class="bar"><span style="width:82%"></span></div></div>
+      <div class="skill"><h4>Fish Nutrition & Feeding</h4><div class="bar"><span style="width:84%"></span></div></div>
+      <div class="skill"><h4>Water Quality Analysis</h4><div class="bar"><span style="width:90%"></span></div></div>
+      <div class="skill"><h4>Fish Health Management</h4><div class="bar"><span style="width:86%"></span></div></div>
+      <div class="skill"><h4>Aquaculture System Operation</h4><div class="bar"><span style="width:88%"></span></div></div>
+      <div class="skill"><h4>Microsoft Office</h4><div class="bar"><span style="width:92%"></span></div></div>
+      <div class="skill"><h4>Research & Academic Projects</h4><div class="bar"><span style="width:90%"></span></div></div>
+    </div>
+  </section>
+
+  <!-- TRAINING & INTERNSHIP -->
+  <section aria-label="Training">
+    <h3>Training & Internship</h3>
+    <div class="projects-grid">
+      <div class="project">
+        <h4>Coldwater Fisheries Training</h4>
+        <p>3-day training conducted at ICAR-Central Institute of Coldwater Fisheries Research, Uttarakhand (19–21 February 2025).</p>
+      </div>
+      <div class="project">
+        <h4>Fishing Gear & Craft Technology</h4>
+        <p>Short-term training (20–22 January 2025) conducted at CIFNET Unit, Visakhapatnam — covering navigation, seamanship, fishing craft handling, and gear technology.</p>
+      </div>
+      <div class="project">
+        <h4>Post-Harvest Technology Training</h4>
+        <p>In-Plant Training on Fisheries Post-Harvest Technology from 6–17 January 2025 at NIFPHATT Unit, Visakhapatnam.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH & ACADEMIC PROJECTS -->
+  <section aria-label="Projects">
+    <h3>Research & Academic Projects</h3>
+    <div class="projects-grid">
+      <div class="project">
+        <h4>Fish Hematology — Blood Smear Study</h4>
+        <p>Prepared and analyzed blood smears to identify RBC/WBC morphology changes under environmental stressors. <a href="https://www.academia.edu/144985915/Haematological_Profiling_of_Labeo_rohita_for_Health_Assessment_Under_Aquaculture_Conditions_in_Jabalpur_Madhya_Pradesh?source=swp_share" target="_blank">View Research Paper</a></p>
+      </div>
+      <div class="project">
+        <h4>Aquaculture System Study</h4>
+        <p>Design and monitoring of aquaculture systems for sustainable fish production and water quality management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section aria-label="Certificates">
+    <h3>Certificates</h3>
+    <div class="cert-grid" id="certGrid"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section aria-label="Contact">
+    <h3>Contact Me</h3>
+    <div class="contact">
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your name" required>
+        <input type="email" id="email" placeholder="Your email" required>
+        <textarea id="message" rows="5" placeholder="Your message" required></textarea>
+        <div style="text-align:center"><button class="btn" type="submit">Send Message</button></div>
+      </form>
+    </div>
+  </section>
+
+</div>
+
+<footer>© 2025 Shrey Haldkar — Portfolio</footer>
+
+<!-- Lightbox markup -->
+<div class="lb-back" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lb-close" id="lbClose" title="Close (Esc)">✕</button>
+  <div class="lb" id="lbContent">
+    <button class="lb-arrow left" id="prevBtn">◀</button>
+    <img src="" alt="Certificate preview" id="lbImg">
+    <button class="lb-arrow right" id="nextBtn">▶</button>
+  </div>
+</div>
+
+<script>
+const certs = [
+  "https://iili.io/KpEP5J9.png",
+  "https://iili.io/KpEPqRn.jpg",
+  "https://iili.io/KpEP3lI.jpg",
+  "https://iili.io/KpEP9ov.jpg",
+  "https://iili.io/KpE6LKB.jpg",
+  "https://iili.io/KpE6gwb.jpg",
+  "https://iili.io/KpE6vS9.jpg",
+  "https://iili.io/KpE6kc7.jpg",
+  "https://iili.io/KpE6eFS.jpg",
+  "https://iili.io/KpE6E8X.jpg",
+  "https://iili.io/fHjJysj.jpg",
+  "https://iili.io/fHhyvRe.jpg"
+];
+
+const grid = document.getElementById('certGrid');
+certs.forEach((url, idx) => {
+  const d = document.createElement('div');
+  d.className = 'cert';
+  d.setAttribute('data-idx', idx);
+  d.innerHTML = `<img src="${url}" alt="Certificate ${idx+1}" loading="lazy">`;
+  grid.appendChild(d);
+});
+
+const lbBack = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+let current = 0;
+
+function openLightbox(i){
+  current = i;
+  lbImg.src = certs[current];
+  lbBack.style.display = 'flex';
+  lbBack.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  lbBack.style.display = 'none';
+  lbBack.setAttribute('aria-hidden','true');
+  lbImg.src = '';
+  document.body.style.overflow = '';
+}
+function showNext(){ current = (current + 1) % certs.length; lbImg.src = certs[current]; }
+function showPrev(){ current = (current - 1 + certs.length) % certs.length; lbImg.src = certs[current]; }
+
+document.querySelectorAll('.cert').forEach(el=>{
+  el.addEventListener('click',()=>openLightbox(Number(el.dataset.idx)));
+});
+
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('nextBtn').addEventListener('click', showNext);
+document.getElementById('prevBtn').addEventListener('click', showPrev);
+
+document.addEventListener('keydown', (e)=>{
+  if(lbBack.style.display === 'flex'){
+    if(e.key==='Escape') closeLightbox();
+    if(e.key==='ArrowRight') showNext();
+    if(e.key==='ArrowLeft') showPrev();
+  }
+});
+
+lbBack.addEventListener('click',(ev)=>{
+  if(ev.target===lbBack) closeLightbox();
+});
+
+// Contact form demo
+document.getElementById('contactForm').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  alert('Thanks — message saved locally (demo). Email: ' + document.getElementById('email').value);
+  e.target.reset();
+});
+
+// Animate skill bars
+window.addEventListener('load', () => {
+  document.querySelectorAll('.bar > span').forEach(s => {
+    const w = s.style.width || '80%';
+    s.style.width = '0';
+    requestAnimationFrame(()=> s.style.width = w);
+  });
+});
+</script>
+
+</body>
+</html>
